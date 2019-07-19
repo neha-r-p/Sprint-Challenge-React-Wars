@@ -10,6 +10,12 @@ const HeaderH1 = styled.h1 `
   color: #443e3e;
   text-shadow: 1px 1px 5px #fff;
 `
+const CardsDiv = styled.div `
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items:center;
+`
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -34,7 +40,7 @@ const App = () => {
   return (
     <div className="App">
       <HeaderH1>React Wars</HeaderH1>
-      <div>
+      <CardsDiv>
         {charObjects.map(char => (
           <Cards 
           name={char.name}
@@ -46,7 +52,7 @@ const App = () => {
           />
         )
         )}
-      </div>
+      </CardsDiv>
     </div>
   );
 }
