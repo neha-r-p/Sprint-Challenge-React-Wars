@@ -2,13 +2,15 @@ import React from "react";
 import styled from 'styled-components'
 
 const ContainerDiv = styled.div `
+    box-sizing: border-box;    
     background: white;
-    width: 200px;
- 
-    height: 300px;
-    padding: 20px;
+    width: 220px;
+    text-align: left;
+    height: 350px;
+    padding:10px 20px;
     margin: 20px;
-  
+    border: 3px navy solid;
+    border-radius: 20px;
 `
  
 function Cards(props) {
