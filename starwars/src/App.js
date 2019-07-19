@@ -29,7 +29,14 @@ const App = () => {
         {/* <CardContainer /> */}
       <div>
         {charObjects.map(char => (
-          <Cards name={char.name}/>
+          <Cards 
+          name={char.name}
+          height={char.height}
+          mass={char.mass}
+          hairColor={char.hair_color}
+          skinColor={char.skin_color}
+          eyeColor={char.eye_color}
+          />
         )
         )}
       </div>
