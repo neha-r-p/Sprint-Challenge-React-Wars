@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios"
-import CardContainer from "./components/CardContainer"
+import Cards from "./components/Cards"
 import './App.css';
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
-  const [cardState, setCardState] = useState([])
-
+  const [charObjects, setCharObjects] = useState([])
+  console.log(charObjects)
   // Fetch characters from the star wars api in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
@@ -15,17 +15,24 @@ const App = () => {
     axios.get('https://henry-mock-swapi.herokuapp.com/api')
     .then(res => {
       console.log(res.data)
+      setCharObjects(res.data.results)
     })
     .catch(err => {
       console.log(err)
     })
-  })
+  }, [])
 
 
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-        <CardContainer />
+        {/* <CardContainer /> */}
+      <div>
+        {charObjects.map(char => (
+          <Cards name={char.name}/>
+        )
+        )}
+      </div>
     </div>
   );
 }

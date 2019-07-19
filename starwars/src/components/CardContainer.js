@@ -1,7 +1,7 @@
 import React from "react";
 
-function CardContainer() {
-
+function CardContainer(props) {
+    const {cards} = props
 
 
     return (
