@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios"
 import Cards from "./components/Cards"
+import styled from 'styled-components'
 import './App.css';
+
+const HeaderH1 = styled.h1 `
+  font-size: 4em;
+  background: #ffffff3a;
+  color: #443e3e;
+  text-shadow: 1px 1px 5px #fff;
+`
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -25,8 +33,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">React Wars</h1>
-        {/* <CardContainer /> */}
+      <HeaderH1>React Wars</HeaderH1>
       <div>
         {charObjects.map(char => (
           <Cards 
